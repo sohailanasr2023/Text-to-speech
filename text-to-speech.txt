@@ -1,0 +1,12 @@
+import pyttsx3
+import pyPDF2
+
+book=open('liftoff.pdf','rb')
+pdfreader=pyPDF2.pdfFileReader(book)
+pages=pdfreader.numpages
+speaker= pyttsx3.init()
+for num in range(,pages):
+  page=pdfreader.getpage(1)
+  text=page.extractText()
+  speaker.say(text)
+  speaker.runAndWait()
